@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Information Form</title>
+    <style>
+        body {
+            background-color: #c7d5db; /* LightSkyBlue */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        table, th, td {
+            border: none;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        select, input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .tb2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .nav-link a {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #333;
+            border: 2px solid #333;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-link a:hover {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<form action="main" method="post">
+    {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>Name</td>
+            <td><input type="text" name="dj"></td>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td><input type="number" name="dj2"></td>
+        </tr>
+
+        <tr>
+            <td>Phone Number</td>
+            <td><input type="number" name="dj3"></td>
+        </tr>
+
+        <tr>
+            <td>City</td>
+            <td>
+                <input type="text" name="dj4">
+                <!-- <select name="dj4">
+                    <option>--City--</option>
+                    <option>Peshawar</option>
+                    <option>Karachi</option>
+                    <option>Lahore</option>
+                    <option>Islamabad</option>
+                    <option>Rawalpindi</option>
+                </select> -->
+            </td>
+        </tr>
+
+        <tr>
+            <td>Course</td>
+            <td>
+               <input type="text" name="dj5">
+                <!-- <select name="dj5">
+                    <option>--Course--</option>
+                    <option>Python</option>
+                    <option>Java</option>
+                    <option>.net</option>
+                    <option>sap</option>
+                    <option>Rust</option>
+                </select> -->
+            </td>
+        </tr>
+    </table>
+
+    <table align="center" class="tb2">
+        <tr>
+            <td><input type="submit" value="Submit" name="dj6"></td>
+            <td><a class="nav-link" href="{% url 'display' %}">Go to Display Home</a></td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>

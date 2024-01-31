@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <style>
+        body {
+            background: url('background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #3498db;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .btn {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .nav-link {
+            margin-left: 10px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <form action="signup" method="post">
+        <h1>SIGN UP HERE</h1>
+        {% csrf_token %}
+        <h3 style="color:rgb(33, 184, 231)">{{ data }}</h3>
+        <table>
+            <tr>
+                <td>User:</td>
+                <td><input type="text" name="nmt"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="emt"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" name="pmt"></td>
+            </tr>
+        </table>
+        <div class="btn">
+            <button type="submit" name="btng">Register</button>
+            <a class="nav-link" href="{% url 'home' %}">Return</a>
+        </div>
+    </form>
+</body>
+</html>

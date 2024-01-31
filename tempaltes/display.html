@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Student Details</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 2px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Student Details</h1>
+    <table align="center">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>PHN</th>
+            <th>CITY</th>
+            <th>COURSE</th>
+            <th>UPDATE</th>
+            <th>DELETE</th>
+        </tr>
+
+        {% for i in Data %}
+           <tr>
+               <td>{{i.id}}</td>
+               <td>{{i.Stud_Name}}</td>
+               <td>{{i.Stud_AGE}}</td>
+               <td>{{i.Stud_Phn}}</td>
+               <td>{{i.Stud_City}}</td>
+               <td>{{i.Stud_Course}}</td>
+               <td><a href="{% url 'update' i.id %}">Update</a></td>
+               <td><a href="{% url 'dlt' i.id %}">Delete</a></td>
+           </tr>
+        {% endfor %}
+
+    </table>
+    <h1><a href="{% url 'home' %}">Return</a></h1>
+</body>
+</html>
